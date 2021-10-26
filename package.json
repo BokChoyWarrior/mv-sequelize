@@ -1,11 +1,13 @@
 {
-  "name": "multiverse-tasks",
+  "name": "mv-sequelize",
   "version": "1.0.0",
-  "description": "Directories containing tasks for multiverse bootcamp",
+  "description": "MV Bootcamp - sequelize",
   "main": "index.js",
   "dependencies": {
     "colors": "^1.4.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "sequelize": "^6.8.0",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
@@ -34,12 +36,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BokChoyWarrior/multiverse-tasks.git"
+    "url": "git+https://github.com/BokChoyWarrior/mv-sequelize.git"
   },
   "author": "Harvey Cambridge",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/BokChoyWarrior/multiverse-tasks/issues"
+    "url": "https://github.com/BokChoyWarrior/mv-sequelize/issues"
   },
-  "homepage": "https://github.com/BokChoyWarrior/multiverse-tasks#readme"
+  "homepage": "https://github.com/BokChoyWarrior/mv-sequelize#readme"
 }
