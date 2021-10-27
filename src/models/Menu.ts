@@ -12,7 +12,7 @@ import Restaurant from './Restaurant';
 import MenuItem from './MenuItem';
 import { sequelize, DataTypes, Model } from '../sequelize_index';
 
-export interface MenuAttributes {
+interface MenuAttributes {
   id: number;
 
   title: string;
@@ -20,11 +20,12 @@ export interface MenuAttributes {
   restaurant_id: number | null;
 }
 
-export interface MenuCreationAttributes extends Optional<MenuAttributes, 'id' | 'restaurant_id'> {}
+interface MenuCreationAttributes extends Optional<MenuAttributes, 'id' | 'restaurant_id'> {}
 /**
  * Represents a Menu
  */
-export class Menu extends Model<MenuAttributes, MenuCreationAttributes> implements MenuAttributes {
+export default class Menu extends Model<MenuAttributes, MenuCreationAttributes>
+  implements MenuAttributes {
   public id!: number;
 
   public title!: string;

@@ -1,6 +1,6 @@
 /* eslint-disable import/no-cycle */
 import { Optional } from 'sequelize/types';
-import { Menu } from './Menu';
+import Menu from './Menu';
 import { sequelize, DataTypes, Model } from '../sequelize_index';
 
 interface MenuItemAttributes {

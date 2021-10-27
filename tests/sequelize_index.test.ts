@@ -1,6 +1,6 @@
 import { sequelize } from '../src/sequelize_index';
 import Restaurant from '../src/models/Restaurant';
-import { Menu } from '../src/models/Menu';
+import Menu from '../src/models/Menu';
 import MenuItem from '../src/models/MenuItem';
 
 describe('Restaurant', () => {

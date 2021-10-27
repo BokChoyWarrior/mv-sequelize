@@ -29,6 +29,7 @@
   },
   "scripts": {
     "build": "tsc",
+    "dev": "ts-node src",
     "test": "jest /*.test.ts",
     "coverage": "jest --coverage ./tests/*.test.ts",
     "jest-watch": "jest --watch ./tests/*.test.ts",

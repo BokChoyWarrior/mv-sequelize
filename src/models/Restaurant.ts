@@ -9,7 +9,7 @@ import {
 } from 'sequelize/types';
 import { sequelize, DataTypes, Model } from '../sequelize_index';
 // eslint-disable-next-line import/no-cycle
-import { Menu } from './Menu';
+import Menu from './Menu';
 
 interface RestaurantAttributes {
   id: number;
