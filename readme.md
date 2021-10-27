@@ -4,4 +4,4 @@ Clone the repo, then run `npm i --also=dev` inside the repo to install all depen
 
 ## Running
 
-Run `npm run dev` to run the app, and see inside [database/]('databse/) for the database created.
+Run `npm run dev` to run the app, and see inside [database/](database/) for the database created.
