@@ -1,5 +1,6 @@
 # Added by me
 package-lock.json
+*.sqlite
 
 # Typescript output
 out/

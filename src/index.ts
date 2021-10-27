@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs';
 import { sequelize } from './sequelize_index';
 
-import Restaurant from './models/Restaurant';
+import { Restaurant, Menu } from './models/models';
 
 (async () => {
   const restaurantsObjects = JSON.parse(readFileSync('./restaurant-data.json', 'utf8'));
@@ -27,5 +27,8 @@ import Restaurant from './models/Restaurant';
       menu.save();
     });
     restaurant.save();
+
+    const menus = await restaurant.getMenus({ include: Menu });
+    console.log(menus);
   });
 })();
