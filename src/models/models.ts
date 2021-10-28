@@ -95,7 +95,7 @@ export class Menu extends Model<MenuAttributes, MenuCreationAttributes> implemen
   public readonly menuItems?: MenuItem[];
 
   public static associations: {
-    menuItems: Association<Restaurant, MenuItem>;
+    menuItems: Association<Menu, MenuItem>;
   };
 }
 /**
@@ -109,33 +109,14 @@ export class MenuItem extends Model<MenuItemAttributes, MenuItemCreationAttribut
 
   public price!: number;
 
-  public menu_id!: number;
+  public menu_id!: number | null;
 
   public getMenu!: BelongsToGetAssociationMixin<Menu>;
-}
 
-MenuItem.init(
-  {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-    },
-    name: DataTypes.TEXT,
-    price: DataTypes.INTEGER,
-    menu_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: Menu,
-        key: 'id',
-      },
-    },
-  },
-  {
-    sequelize,
-    timestamps: false,
-  },
-);
+  public static associations: {
+    menu: Association<Menu, MenuItem>;
+  };
+}
 
 Restaurant.init(
   {
@@ -178,6 +159,29 @@ Menu.init(
   },
 );
 
+MenuItem.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+    },
+    name: DataTypes.TEXT,
+    price: DataTypes.INTEGER,
+    menu_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: Menu,
+        key: 'id',
+      },
+    },
+  },
+  {
+    sequelize,
+    timestamps: false,
+  },
+);
+
 Restaurant.hasMany(Menu, {
   sourceKey: 'id',
   foreignKey: 'restaurant_id',
@@ -189,3 +193,6 @@ Menu.hasMany(MenuItem, {
   foreignKey: 'menu_id',
   as: 'menuItems',
 });
+
+MenuItem.belongsTo(Menu, { foreignKey: 'menu_id' });
+Menu.belongsTo(Restaurant, { foreignKey: 'restaurant_id' });

@@ -46,7 +46,7 @@ describe('Restaurant', () => {
   });
 
   // eslint-disable-next-line jest/no-focused-tests
-  test.only('menus have menuItems', async () => {
+  test('menus have menuItems', async () => {
     const restaurant = await Restaurant.create({ name: 'Ronalds', image: 'http://some.image.url' });
     const menu = await restaurant.createMenu({
       title: 'set 1',
@@ -61,7 +61,6 @@ describe('Restaurant', () => {
     const items = await menu.getMenuItems();
     expect(items[0].name).toBe('food 1');
 
-    console.log('GETGIN MENU!!!!!!');
     const menu1 = await items[0].getMenu();
     expect(menu1.id).toBe(1);
   });
